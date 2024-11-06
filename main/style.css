@@ -1,10 +1,12 @@
-  body {
+body {
   margin: 0;
   font-family: "inter", sans-serif;
+  overflow: auto;
+  background-color: #2a2f46;
   }
 
   .animalName {
-    font-weight:bolder;
+    font-weight:bolder; 
   }
 
   .container {
@@ -12,13 +14,22 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    /*height: 100vh;*/
+  }
+
+  #wrapper {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem; /* Adjust the gap between cards as needed */
   }
 
   .animalCardWrapper {
-    padding: 6px;
+    width: 300px; 
+    height: 450px; 
     display: flex;
-    flex-direction: row;
+    padding: 1rem;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgb(30, 110, 147);
@@ -103,7 +114,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 0.5rem;
-  }
+  } 
 
   .attributeBox {
     width: 7.5rem;

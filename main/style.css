@@ -1,9 +1,27 @@
-body {
+main, body {
   margin: 0;
   font-family: "inter", sans-serif;
   overflow: auto;
   background-color: #2a2f46;
   }
+
+h1 {
+  font-size: 1.5rem;
+  color: white;
+  text-align: left;
+  margin: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+h4 {
+  color: white;
+  text-align: left;
+  margin: 0;
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+
+}
 
   .animalName {
     font-weight:bolder; 

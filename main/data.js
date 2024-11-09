@@ -78,7 +78,7 @@ const data = [
   {
     "id": 5,
     "name_german": "Wanderspinne",
-    "trivia_german": "Versteckt sich oft in Bananenstauden, deshalb auch ?Bananenspinne? genannt",
+    "trivia_german": "Versteckt sich oft in Bananenstauden, deshalb auch Bananenspinne genannt",
     "trivia": "Often hide in banana trees, so they are also called ?banana spiders?",
     "group": "B",
     "groupname_german": "Giftig und infektiös",

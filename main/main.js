@@ -64,6 +64,11 @@ $(document).ready(function() {
     });
 
     $('.animalCardWrapper').first().remove();
+    $('.animalCardWrapper').on('click', function() {
+        // Toggle the 'clicked' class to switch opacity between 100% and 30%
+        $(this).toggleClass('clicked');
+    });
+    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -171,11 +176,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Re-append sorted cards to the wrapper
         cards.forEach(function(card) {
             wrapper.appendChild(card);
         });
     }
-    
+ 
 
 });

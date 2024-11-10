@@ -153,6 +153,14 @@ scale: 80%;
     box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.86); 
     transition: box-shadow 0.7s ease;
   }
+  
+  .animalCardWrapper {
+    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.animalCardWrapper.clicked {
+    opacity: 0.3;
+}
 
   .predators{
     background-color: #da5c53;

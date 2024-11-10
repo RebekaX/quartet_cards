@@ -101,7 +101,7 @@ scale: 80%;
   border-radius: 3px; 
   margin-left: 3px;
   cursor: pointer;
-  transition: background-color 0.3s ease, font-weight 0.3s ease; /* Add transition for smooth hover effect */
+  transition: background-color 0.3s ease, font-weight 0.3s ease; 
 
 }
 .dropdown-content div::before {
@@ -150,7 +150,8 @@ scale: 80%;
     }
 
     .animalCardWrapper:hover {
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.86); 
+    box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.86); 
+    transition: box-shadow 0.7s ease;
   }
 
   .predators{

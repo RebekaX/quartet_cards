@@ -84,11 +84,24 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdownContent.classList.toggle('show');
     });
 
+    document.getElementById('sortTitle').addEventListener('click', function() {
+        const dropdownContent = document.querySelector('#sortDropdown .dropdown-content');
+        dropdownContent.classList.toggle('show');
+    });
+
     document.querySelectorAll('.dropdown-content div').forEach(function(element) {
         element.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
-            filterCards(filter);
-            document.querySelector('#filterDropdown .dropdown-content').classList.remove('show');
+            if (filter) {
+                filterCards(filter);
+            }
+            const sort = this.getAttribute('data-sort');
+            if (sort) {
+                sortCards(sort);
+            }
+            document.querySelectorAll('.dropdown-content').forEach(function(content) {
+                content.classList.remove('show');
+            });
         });
     });
 
@@ -105,5 +118,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+    }
+
+    function sortCards(sort) {
+        const wrapper = document.getElementById('wrapper');
+        const cards = Array.from(wrapper.getElementsByClassName('animalCardWrapper'));
+        if (sort === 'category') {
+            const categoryOrder = ['predators', 'poisonous', 'reptiles', 'seaCreatures', 'marineGiants', 'largeMammals', 'landMammals', 'birds'];
+            cards.sort(function(a, b) {
+                const aCategory = categoryOrder.indexOf(a.classList[1]);
+                const bCategory = categoryOrder.indexOf(b.classList[1]);
+                return aCategory - bCategory;
+            });
+        } else {
+            cards.sort(function(a, b) {
+                const aValue = a.querySelector(`.animal${capitalizeFirstLetter(sort)}`).textContent;
+                const bValue = b.querySelector(`.animal${capitalizeFirstLetter(sort)}`).textContent;
+                return aValue.localeCompare(bValue);
+            });
+        }
+        cards.forEach(function(card) {
+            wrapper.appendChild(card);
+        });
+    }
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 });

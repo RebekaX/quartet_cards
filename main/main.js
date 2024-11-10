@@ -77,3 +77,33 @@ $(document).ready(function() {
 
     $('.animalCardWrapper').first().remove();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('filterTitle').addEventListener('click', function() {
+        const dropdownContent = document.querySelector('#filterDropdown .dropdown-content');
+        dropdownContent.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.dropdown-content li span').forEach(function(element) {
+        element.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            filterCards(filter);
+            document.querySelector('#filterDropdown .dropdown-content').classList.remove('show');
+        });
+    });
+
+    function filterCards(filter) {
+        const cards = document.querySelectorAll('.animalCardWrapper');
+        cards.forEach(function(card) {
+            if (filter === 'all') {
+                card.style.display = 'flex';
+            } else {
+                if (card.classList.contains(filter)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+    }
+});

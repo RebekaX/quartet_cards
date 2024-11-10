@@ -19,30 +19,29 @@
         
         <nav>
             <div class="filter-container">
-              <div id="filterDropdown" class="filter-dropdown">
-                <span id="filterTitle" class="filter-title">Filter &#9662;</span> <!-- Chevron added here -->
-                <div class="dropdown-content">
-                  <select id="animalType" name="animalType">
-                    <option value="all">All</option>
-                    <option value="predator">Predators</option>
-                    <option value="poisonous">Poisonous</option>
-                    <option value="reptiles">Reptiles</option>
-                    <option value="seaCreatures">Sea Creatures</option>
-                    <option value="marineGiants">Marine Giants</option>
-                    <option value="largeMammals">Large Mammals</option>
-                    <option value="landMammals">Land Mammals</option>
-                    <option value="birds">Birds</option>
-                  </select>
+                <div id="filterDropdown" class="filter-dropdown">
+                    <span id="filterTitle" class="filter-title">Filter &#9662;</span> <!-- Chevron added here -->
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><span data-filter="all">All</span></li>
+                            <li><span data-filter="predators">Predators</span></li>
+                            <li><span data-filter="poisonous">Poisonous</span></li>
+                            <li><span data-filter="reptiles">Reptiles</span></li>
+                            <li><span data-filter="seaCreatures">Sea Creatures</span></li>
+                            <li><span data-filter="marineGiants">Marine Giants</span></li>
+                            <li><span data-filter="largeMammals">Large Mammals</span></li>
+                            <li><span data-filter="landMammals">Land Mammals</span></li>
+                            <li><span data-filter="birds">Birds</span></li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </div>
-          </nav>
-        </header>
-    <div class="container">
+        </nav>
+    </header>
+    <div class="container" id="wrapper">
         <div class="animalCardWrapper">
             <div class="animalCard">
                 <div class="animalCardPredator">
-
                 <div class="animalCardHeader">
                     <div class="animalGroupNumber">E2</div>
                     <div class="animalName">Weißer Hai</div>
@@ -86,7 +85,6 @@
             </div>
         </div>
     </div>
-    <div id="wrapper"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>

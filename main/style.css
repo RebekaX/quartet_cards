@@ -50,12 +50,36 @@ main, body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgb(30, 110, 147);
+      background-color: rgb(29, 117, 158);
     }
 
     .animalCardWrapper:hover {
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.86); 
   }
+
+  .predators{
+    background-color: #da5c53;
+  }
+  .poisonous{
+    background-color: #c98a52;
+  }
+  .reptiles{
+    background-color: #3c733c;
+  }
+  .seaCreatures{
+    background-color: #655196;
+  }
+  .largeMammals{
+    background-color: #917a4e;
+  }
+  .landMammals{
+    background-color: #87964c;
+  }
+  .birds{
+    background-color: #329898;
+  }
+
+
 
     .animalCard {
         width: 300px; 
@@ -108,7 +132,6 @@ main, body {
     .animalImage {
       width: 100%;
       height: 200px;
-      background-image: url("../main/assets/images/shark.png");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -123,6 +146,14 @@ main, body {
       margin-top: 0.5rem;
       border-radius: 7px;
       text-align: center;
+    }
+    .attributeValueWeight,
+    .attributeValueYears,
+    .attributeValueBabies,
+    .attributeValueLenght,
+    .attributeValueSpeed,
+    .attributeValueDeath {
+        font-size: 13px;
     }
 
     .animalAttributesWrapper {
@@ -152,7 +183,7 @@ main, body {
       border-radius: 0.5rem;
       background-color: #2a2f46;
       padding: 0rem;
-      gap: 2rem;
+      gap: 1rem;
     
     }
 

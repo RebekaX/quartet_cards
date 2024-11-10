@@ -16,7 +16,9 @@ const data = [
     "max_length": 250,
     "litter_size": 4,
     "continents": "Africa, Asia",
-    "intelligence": 8
+    "intelligence": 8,
+    "image_url": "../main/assets/images/lion2.jpeg"  // Add the correct image URL here
+
   },
   {
     "id": 2,
@@ -35,7 +37,9 @@ const data = [
     "max_length": 150,
     "litter_size": 5,
     "continents": "Africa, Asia",
-    "intelligence": 5
+    "intelligence": 5,
+    "image_url": "../main/assets/images/cheetah3.png"  // Add the correct image URL here
+
   },
   {
     "id": 3,
@@ -54,7 +58,8 @@ const data = [
     "max_length": 290,
     "litter_size": 4,
     "continents": "Asia",
-    "intelligence": 7
+    "intelligence": 7,
+    "image_url": "../main/assets/images/tiger3.png" 
   },
   {
     "id": 4,
@@ -73,7 +78,9 @@ const data = [
     "max_length": 160,
     "litter_size": 3,
     "continents": "Africa, Asia",
-    "intelligence": 7
+    "intelligence": 7,
+    "image_url": "../main/assets/images/hyena.png" 
+
   },
   {
     "id": 5,
@@ -92,7 +99,9 @@ const data = [
     "max_length": 15,
     "litter_size": 1840,
     "continents": "Americas",
-    "intelligence": 2
+    "intelligence": 2,
+    "image_url": "../main/assets/images/wandering spider.jpeg" 
+
   },
   {
     "id": 6,
@@ -111,7 +120,9 @@ const data = [
     "max_length": 21,
     "litter_size": 50,
     "continents": "all",
-    "intelligence": 2
+    "intelligence": 2,
+    "image_url": "../main/assets/images/scorpion2.jpg" 
+
   },
   {
     "id": 7,
@@ -130,7 +141,9 @@ const data = [
     "max_length": 1,
     "litter_size": 400,
     "continents": "all",
-    "intelligence": 1
+    "intelligence": 1,
+    "image_url": "../main/assets/images/mosquito 3.jpeg" 
+
   },
   {
     "id": 8,
@@ -149,7 +162,8 @@ const data = [
     "max_length": 6,
     "litter_size": 35,
     "continents": "Americas",
-    "intelligence": 2
+    "intelligence": 2,
+    "image_url": "../main/assets/images/poison dart frog 2.jpeg" 
   },
   {
     "id": 9,
@@ -168,7 +182,8 @@ const data = [
     "max_length": 610,
     "litter_size": 80,
     "continents": "Africa, Asia, Americas, Oceania",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/crocodile.jpeg" 
   },
   {
     "id": 10,
@@ -187,7 +202,9 @@ const data = [
     "max_length": 550,
     "litter_size": 40,
     "continents": "Africa, Asia",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/cobra.jpeg" 
+
   },
   {
     "id": 11,
@@ -206,7 +223,9 @@ const data = [
     "max_length": 300,
     "litter_size": 30,
     "continents": "Asia",
-    "intelligence": 3
+    "intelligence": 3,
+    "image_url": "../main/assets/images/komodo dragon 2.jpeg" 
+
   },
   {
     "id": 12,
@@ -225,7 +244,8 @@ const data = [
     "max_length": 130,
     "litter_size": 14,
     "continents": "Americas",
-    "intelligence": 3
+    "intelligence": 3,
+    "image_url": "../main/assets/images/galapagos Tortoise.jpeg" 
   },
   {
     "id": 13,
@@ -244,7 +264,9 @@ const data = [
     "max_length": 450,
     "litter_size": 15000000,
     "continents": "",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/swordfish.jpeg" 
+
   },
   {
     "id": 14,
@@ -263,7 +285,9 @@ const data = [
     "max_length": 90,
     "litter_size": 20,
     "continents": "",
-    "intelligence": 1
+    "intelligence": 1,
+    "image_url": "../main/assets/images/cone snail.png" 
+
   },
   {
     "id": 15,
@@ -282,7 +306,8 @@ const data = [
     "max_length": 1400,
     "litter_size": 10000000,
     "continents": "",
-    "intelligence": 6
+    "intelligence": 6,
+    "image_url": "../main/assets/images/colossal squid.jpeg" 
   },
   {
     "id": 16,
@@ -301,7 +326,9 @@ const data = [
     "max_length": 360,
     "litter_size": 1,
     "continents": "Americas, Europe, Asia",
-    "intelligence": 6
+    "intelligence": 6,
+    "image_url": "../main/assets/images/walrus.jpeg" 
+
   },
   {
     "id": 17,
@@ -320,7 +347,8 @@ const data = [
     "max_length": 1450,
     "litter_size": 300,
     "continents": "",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/whale shark.jpeg" 
   },
   {
     "id": 18,
@@ -339,7 +367,8 @@ const data = [
     "max_length": 600,
     "litter_size": 14,
     "continents": "",
-    "intelligence": 5
+    "intelligence": 5,
+    "image_url": "../main/assets/images/shark.png" 
   },
   {
     "id": 19,
@@ -358,7 +387,9 @@ const data = [
     "max_length": 3360,
     "litter_size": 1,
     "continents": "",
-    "intelligence": 8
+    "intelligence": 8,
+    "image_url": "../main/assets/images/blue whale.jpeg" 
+
   },
   {
     "id": 20,
@@ -377,7 +408,9 @@ const data = [
     "max_length": 950,
     "litter_size": 1,
     "continents": "",
-    "intelligence": 10
+    "intelligence": 10,
+    "image_url": "../main/assets/images/orca.jpeg" 
+
   },
   {
     "id": 21,
@@ -396,7 +429,8 @@ const data = [
     "max_length": 750,
     "litter_size": 1,
     "continents": "Africa, Asia",
-    "intelligence": 10
+    "intelligence": 10,
+    "image_url": "../main/assets/images/elephant4.png" 
   },
   {
     "id": 22,
@@ -415,7 +449,9 @@ const data = [
     "max_length": 340,
     "litter_size": 1,
     "continents": "Africa, Asia, Americas",
-    "intelligence": 5
+    "intelligence": 5,
+    "image_url": "../main/assets/images/buffalo.jpeg" 
+
   },
   {
     "id": 23,
@@ -434,7 +470,8 @@ const data = [
     "max_length": 340,
     "litter_size": 2,
     "continents": "Americas, Europe, Asia",
-    "intelligence": 7
+    "intelligence": 7,
+    "image_url": "../main/assets/images/polar bear.jpeg" 
   },
   {
     "id": 24,
@@ -453,7 +490,9 @@ const data = [
     "max_length": 500,
     "litter_size": 1,
     "continents": "Africa",
-    "intelligence": 5
+    "intelligence": 5,
+    "image_url": "../main/assets/images/hippo.jpeg" 
+
   },
   {
     "id": 25,
@@ -472,7 +511,9 @@ const data = [
     "max_length": 180,
     "litter_size": 1,
     "continents": "Africa",
-    "intelligence": 9
+    "intelligence": 9,
+    "image_url": "../main/assets/images/gorilla.png" 
+
   },
   {
     "id": 26,
@@ -491,7 +532,9 @@ const data = [
     "max_length": 300,
     "litter_size": 3,
     "continents": "Americas, Europe, Asia",
-    "intelligence": 7
+    "intelligence": 7,
+    "image_url": "../main/assets/images/bear2.jpeg" 
+
   },
   {
     "id": 27,
@@ -510,7 +553,9 @@ const data = [
     "max_length": 600,
     "litter_size": 1,
     "continents": "Africa",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/girafef.png" 
+
   },
   {
     "id": 28,
@@ -529,7 +574,9 @@ const data = [
     "max_length": 160,
     "litter_size": 6,
     "continents": "Americas, Europe, Asia",
-    "intelligence": 9
+    "intelligence": 9,
+    "image_url": "../main/assets/images/wolf2.png" 
+
   },
   {
     "id": 29,
@@ -548,7 +595,9 @@ const data = [
     "max_length": 280,
     "litter_size": 16,
     "continents": "Africa",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/ostrich.png" 
+
   },
   {
     "id": 30,
@@ -567,7 +616,9 @@ const data = [
     "max_length": 114,
     "litter_size": 5,
     "continents": "all",
-    "intelligence": 6
+    "intelligence": 6,
+    "image_url": "../main/assets/images/peregrine falcon 3.png" 
+
   },
   {
     "id": 31,
@@ -586,7 +637,9 @@ const data = [
     "max_length": 350,
     "litter_size": 1,
     "continents": "all",
-    "intelligence": 4
+    "intelligence": 4,
+    "image_url": "../main/assets/images/albatross.png" 
+
   },
   {
     "id": 32,
@@ -605,6 +658,8 @@ const data = [
     "max_length": 230,
     "litter_size": 12,
     "continents": "Asia, Africa",
-    "intelligence": 3
+    "intelligence": 3,
+    "image_url": "../main/assets/images/peacock.png" 
+
   }
 ]

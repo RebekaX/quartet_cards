@@ -1,40 +1,101 @@
 main, body {
-    margin: 0;
-    font-family: "inter", sans-serif;
-    overflow: auto;
-    background-color: #2a2f46;
-    }
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  overflow: auto;
+  background-color: #2a2f46;
+}
 
-  h1 {
-    font-size: 1.5rem;
-    color: white;
-    text-align: left;
-    margin: 0;
-    margin-top: 1rem;
-    margin-left: 1rem;
-  }
+/* Header Layout */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  grid-gap: 20px;
+  padding: 1rem 2rem;
+}
 
-  h4 {
-    color: white;
-    text-align: left;
-    margin: 0;
-    margin-top: 0.3rem;
-    margin-left: 1rem;
+/* Website Icon */
+.websiteIcon {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+}
 
-  }
+/* Title (h1) */
+h1 {
+  font-size: 2rem;
+  color: white;
+  text-align: left;
+  margin: 0;
+}
 
-    .animalName {
-      font-weight:bolder; 
-    }
+nav {
+  justify-self: end;
+}
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      /*height: 100vh;*/
-    }
+.filter-container {
+  position: relative;
+}
 
+/* Filter Text */
+.filter-title {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-right: 4rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-title:hover {
+  background-color: #165f7f;
+}
+
+/* Dropdown Content */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px; /* Adjust based on font size */
+  left: 0;
+  background-color: #2a2f46;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.filter-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#filterDropdown select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
     #wrapper {
       margin: 1rem;
       display: grid;
@@ -49,10 +110,11 @@ main, body {
       padding: 1rem;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       background-color: #1d759e;
       scale: 0.9;
       gap: 0.5rem;  
+      position: relative; /* Add relative positioning */
     }
 
     .animalCardWrapper:hover {
@@ -86,19 +148,18 @@ main, body {
 
 
 
-    .animalCard {
-        width: 300px; 
-        height: 450px; 
-        background-image: linear-gradient(rgb(20, 63, 84), rgb(9, 12, 22));
-        border-radius: 1rem;
-        padding: 1rem;
-        color: white;
-        box-sizing: border-box; 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
+  .animalCard {
+    width: 100%; 
+    height: 100%; 
+    background-image: linear-gradient(rgb(20, 63, 84), rgb(9, 12, 22));
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Add relative positioning */
+}
 
     .animalCardHeader {
       width: 100%;
@@ -138,7 +199,7 @@ main, body {
     }
 
     .iconPredators {
-        background-color: #e94e3b; /* Strong red */
+        background-color: #da5c53; /* Strong red */
         background-image: url('../main/assets/icon/predator.png');
     }
     
@@ -200,14 +261,7 @@ main, body {
       margin-top: 0.5rem;
       border-radius: 7px;
       text-align: center;
-    }
-    .attributeValueWeight,
-    .attributeValueYears,
-    .attributeValueBabies,
-    .attributeValueLenght,
-    .attributeValueSpeed,
-    .attributeValueDeath {
-        font-size: 13px;
+      flex-grow: 1; /* Allow the description to grow */
     }
 
     .animalAttributesWrapper {
@@ -216,8 +270,11 @@ main, body {
       flex-direction: row;
       gap: 1rem;
       align-items: center;
-      margin-top: 0.9rem;
       justify-content: space-evenly;
+      position: absolute; /* Position absolutely */
+      bottom: 1rem; /* Distance from the bottom */
+      left: 1rem; /* Distance from the left */
+      right: 1rem; /* Distance from the right */
     }
 
     .animalAttributesColumn {
@@ -245,4 +302,12 @@ main, body {
       width: 1.5rem;
       height: 1.5rem;
       margin-left: 0.5rem;
+    }
+    .attributeValueWeight,
+    .attributeValueYears,
+    .attributeValueBabies,
+    .attributeValueLenght,
+    .attributeValueSpeed,
+    .attributeValueDeath {
+        font-size: 13px;
     }

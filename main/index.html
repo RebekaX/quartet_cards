@@ -12,8 +12,32 @@
         rel="stylesheet">
 </head>
 <body>
-  <h1>Wilde Tiere</h1>
-  <h4>Catch them all</h4>
+    <header>
+        <div class="websiteIcon"></div>
+        
+        <h1>Wilde Tiere</h1>
+        
+        <nav>
+            <div class="filter-container">
+              <div id="filterDropdown" class="filter-dropdown">
+                <span id="filterTitle" class="filter-title">Filter &#9662;</span> <!-- Chevron added here -->
+                <div class="dropdown-content">
+                  <select id="animalType" name="animalType">
+                    <option value="all">All</option>
+                    <option value="predator">Predators</option>
+                    <option value="poisonous">Poisonous</option>
+                    <option value="reptiles">Reptiles</option>
+                    <option value="seaCreatures">Sea Creatures</option>
+                    <option value="marineGiants">Marine Giants</option>
+                    <option value="largeMammals">Large Mammals</option>
+                    <option value="landMammals">Land Mammals</option>
+                    <option value="birds">Birds</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
     <div class="container">
         <div class="animalCardWrapper">
             <div class="animalCard">

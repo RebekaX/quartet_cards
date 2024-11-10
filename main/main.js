@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdownContent.classList.toggle('show');
     });
 
-    document.querySelectorAll('.dropdown-content li span').forEach(function(element) {
+    document.querySelectorAll('.dropdown-content div').forEach(function(element) {
         element.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
             filterCards(filter);

@@ -41,6 +41,10 @@ nav {
   justify-self: end;
 }
 
+.websiteIcon {
+scale: 80%;
+}
+
 .filter-container {
   position: relative;
 }
@@ -73,13 +77,12 @@ nav {
   left: 0;
   background-color: #2a2f46;
   color: white;
-  padding: 1rem;
+  padding:0.3rem;
   border-radius: 5px;
-  width: 200px;
+  width: 180px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 100;
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .filter-dropdown:hover .dropdown-content,
@@ -92,24 +95,24 @@ nav {
   opacity: 1;
 }
 
-.dropdown-content ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0;
-  margin: 0;
-}
 
-.dropdown-content li {
+.dropdown-content div {
   padding: 0.5rem 0;
-}
-
-.dropdown-content li span {
-  color: white;
+  border-radius: 3px; 
+  margin-left: 3px;
   cursor: pointer;
-  text-decoration: none;
+  transition: background-color 0.3s ease, font-weight 0.3s ease; /* Add transition for smooth hover effect */
+
+}
+.dropdown-content div::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
 }
 
-.dropdown-content li span:hover {
+.dropdown-content div:hover {
   font-weight: bold;
+  background-color: #1a1b29;
 }
 
 #filterDropdown select {

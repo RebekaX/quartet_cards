@@ -17,47 +17,63 @@ $(document).ready(function() {
         cardTemplate.find('.attributeValueLenght').text(animal.max_length);
         cardTemplate.find('.attributeValueSpeed').text(animal.top_speed);
         cardTemplate.find('.attributeValueDeath').text(animal.deaths);
+        
         switch(animal.groupname) {
             case "Predators":
                 cardTemplate.addClass('predators');
                 cardTemplate.addClass('animalCardPredators');
+                cardTemplate.find('.animalIcon').addClass('iconPredators');
+                
                 break;
             case "Poisonous and Infectious":
                 cardTemplate.addClass('poisonous');
                 cardTemplate.addClass('animalCardPoisonous');
+                cardTemplate.find('.animalIcon').addClass('iconPoisonous');
+
                 break;
             case "Reptiles":
                 cardTemplate.addClass('reptiles');
                 cardTemplate.addClass('animalCardReptiles');
+                cardTemplate.find('.animalIcon').addClass('iconReptiles');
                 break;
+
             case "Sea Creatures":
                 cardTemplate.addClass('seaCreatures');
                 cardTemplate.addClass('animalCardSeaCreatures');
+                cardTemplate.find('.animalIcon').addClass('iconSeaCreatures');
                 break;
+
+            case "Marine Giants":
+                cardTemplate.addClass('marineGiants');
+                cardTemplate.addClass('animalCardMarineGiants');
+                cardTemplate.find('.animalIcon').addClass('iconMarineGiants');
+                break;
+
             case "Large Mammals":
                 cardTemplate.addClass('largeMammals');
                 cardTemplate.addClass('animalCardLargeMammals');
+                cardTemplate.find('.animalIcon').addClass('iconLargeMammals');
                 break;
+
             case "Land Mammals":
                 cardTemplate.addClass('landMammals');
                 cardTemplate.addClass('animalCardLargeMammals');
+                cardTemplate.find('.animalIcon').addClass('iconLandMammals');
                 break;
+
             case "Birds":
                 cardTemplate.addClass('birds');
                 cardTemplate.addClass('animalCardBirds');
+                cardTemplate.find('.animalIcon').addClass('iconBirds');
                 break;
+
             default:
-                // Optional: You can add a default category in case of an unrecognized group
-                cardTemplate.addClass('default');
-                cardTemplate.addClass('animalCardDefault');
-                break;
+              
         }
 
-        // Append the card template to the wrapper
         $('#wrapper').append(cardTemplate);
     });
   
 
-    // Remove the original card template after cloning
     $('.animalCardWrapper').first().remove();
 });

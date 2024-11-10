@@ -39,7 +39,7 @@ main, body {
       margin: 1rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem; 
+      padding-top: 2rem;
     }
 
     .animalCardWrapper {
@@ -50,7 +50,9 @@ main, body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgb(29, 117, 158);
+      background-color: #1d759e;
+      scale: 0.9;
+      gap: 0.5rem;  
     }
 
     .animalCardWrapper:hover {
@@ -68,6 +70,9 @@ main, body {
   }
   .seaCreatures{
     background-color: #655196;
+  }
+  .marineGiants{
+    background-color: #1d759e;
   }
   .largeMammals{
     background-color: #917a4e;
@@ -127,8 +132,57 @@ main, body {
       display: flex;
       justify-content: center;
       align-items: center;
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
+    .iconPredators {
+        background-color: #e94e3b; /* Strong red */
+        background-image: url('../main/assets/icon/predator.png');
+    }
+    
+    .iconPoisonous {
+        background-color:  #c98a52; 
+        background-image: url('../main/assets/icon/poison.png'); ;
+    }
+    
+    .iconReptiles {
+        background-color:  #3c733c; 
+        background-image: url('../main/assets/icon/reptile.png');
+        background-size: 30px;
+    }
+    
+    .iconSeaCreatures {
+        background-color: #655196; 
+        background-image: url('../main/assets/icon/sea_creatures.png');
+        
+    }
+
+    .iconMarineGiants {
+        background-color: #1d759e; 
+        background-image: url('../main/assets/icon/sea_giants.png');
+    }
+
+    .iconLargeMammals {
+        background-color: #917a4e; 
+        background-image: url('../main/assets/icon/large_mammals.png');
+        background-size: 30px;
+    }
+
+    .iconLandMammals {
+        background-color:  #87964c; 
+        background-image: url('../main/assets/icon/land_mammals2.png');
+    }
+
+    .iconBirds {
+        background-color: #329898; 
+        background-image: url('../main/assets/icon/bird.png');
+        background-size: 30px;
+
+    } 
+
+    
     .animalImage {
       width: 100%;
       height: 200px;

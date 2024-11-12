@@ -2,12 +2,11 @@ $(document).ready(function() {
     $.each(data, function(index, animal) {
         let cardTemplate = $('.animalCardWrapper').first().clone();
         
+        // Populate card with animal data
         cardTemplate.find('.animalName').text(animal.name_german);
         cardTemplate.find('.animalDescription').text(animal.trivia_german);
         cardTemplate.find('.animalAttributes').text(animal.name_german);
-
         cardTemplate.find('.animalGroupNumber').text(animal.group + animal.group_number);
-        
         cardTemplate.find('.animalImage').css('background-image', 'url("' + animal.image_url + '")');
         cardTemplate.find('.attributeValueWeight').text(animal.max_weight);
         cardTemplate.find('.attributeValueYears').text(animal.max_age);
@@ -16,45 +15,38 @@ $(document).ready(function() {
         cardTemplate.find('.attributeValueSpeed').text(animal.top_speed);
         cardTemplate.find('.attributeValueDeath').text(animal.deaths);
         
+        // Assign classes based on animal group
         switch(animal.groupname) {
             case "Predators":
-                cardTemplate.addClass('predators');
-                cardTemplate.addClass('animalCardPredators');
+                cardTemplate.addClass('predators animalCardPredators');
                 cardTemplate.find('.animalIcon').addClass('iconPredators');
                 break;
             case "Poisonous and Infectious":
-                cardTemplate.addClass('poisonous');
-                cardTemplate.addClass('animalCardPoisonous');
+                cardTemplate.addClass('poisonous animalCardPoisonous');
                 cardTemplate.find('.animalIcon').addClass('iconPoisonous');
                 break;
             case "Reptiles":
-                cardTemplate.addClass('reptiles');
-                cardTemplate.addClass('animalCardReptiles');
+                cardTemplate.addClass('reptiles animalCardReptiles');
                 cardTemplate.find('.animalIcon').addClass('iconReptiles');
                 break;
             case "Sea Creatures":
-                cardTemplate.addClass('seaCreatures');
-                cardTemplate.addClass('animalCardSeaCreatures');
+                cardTemplate.addClass('seaCreatures animalCardSeaCreatures');
                 cardTemplate.find('.animalIcon').addClass('iconSeaCreatures');
                 break;
             case "Marine Giants":
-                cardTemplate.addClass('marineGiants');
-                cardTemplate.addClass('animalCardMarineGiants');
+                cardTemplate.addClass('marineGiants animalCardMarineGiants');
                 cardTemplate.find('.animalIcon').addClass('iconMarineGiants');
                 break;
             case "Large Mammals":
-                cardTemplate.addClass('largeMammals');
-                cardTemplate.addClass('animalCardLargeMammals');
+                cardTemplate.addClass('largeMammals animalCardLargeMammals');
                 cardTemplate.find('.animalIcon').addClass('iconLargeMammals');
                 break;
             case "Land Mammals":
-                cardTemplate.addClass('landMammals');
-                cardTemplate.addClass('animalCardLandMammals');
+                cardTemplate.addClass('landMammals animalCardLandMammals');
                 cardTemplate.find('.animalIcon').addClass('iconLandMammals');
                 break;
             case "Birds":
-                cardTemplate.addClass('birds');
-                cardTemplate.addClass('animalCardBirds');
+                cardTemplate.addClass('birds animalCardBirds');
                 cardTemplate.find('.animalIcon').addClass('iconBirds');
                 break;
             default:
@@ -63,25 +55,57 @@ $(document).ready(function() {
         $('#wrapper').append(cardTemplate);
     });
 
+    // Remove the original template element
     $('.animalCardWrapper').first().remove();
+
+let totalCards = 32;
+let collectedCount = totalCards;
+
+function updateCounter() {
+    $('#counter').text(collectedCount + '/' + totalCards);
+}
+
+$(document).ready(function() {
+    updateCounter();
+
     $('.animalCardWrapper').on('click', function() {
-        // Toggle the 'clicked' class to switch opacity between 100% and 30%
-        $(this).toggleClass('clicked');
+        var $this = $(this);
+        
+        $this.toggleClass('clicked');
+        
+        $this.css('transition', 'opacity 0.7s ease');
+        $this.css('opacity', $this.hasClass('clicked') ? 0.3 : 1);
+
+        if ($this.hasClass('clicked')) {
+            collectedCount--;
+        } else {
+            collectedCount++;
+        }
+
+        updateCounter();
     });
-    
+});
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('filterTitle').addEventListener('click', function() {
-        const dropdownContent = document.querySelector('#filterDropdown .dropdown-content');
-        dropdownContent.classList.toggle('show');
+    const filterDropdown = document.querySelector('#filterDropdown .dropdown-content');
+    const sortDropdown = document.querySelector('#sortDropdown .dropdown-content');
+    const filterButton = document.getElementById('filterTitle');
+    const sortButton = document.getElementById('sortTitle');
+    const websiteIcon = document.querySelector('.websiteIcon'); // Use querySelector to target the div
+    const h1 = document.querySelector('h1');
+
+    filterButton.addEventListener('click', function() {
+        filterDropdown.classList.toggle('show');
     });
 
-    document.getElementById('sortTitle').addEventListener('click', function() {
-        const dropdownContent = document.querySelector('#sortDropdown .dropdown-content');
-        dropdownContent.classList.toggle('show');
+    // Toggle sort dropdown on click
+    sortButton.addEventListener('click', function() {
+        sortDropdown.classList.toggle('show');
     });
 
+    // Close both dropdowns when an option is selected
     document.querySelectorAll('.dropdown-content div').forEach(function(element) {
         element.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
@@ -92,62 +116,46 @@ document.addEventListener('DOMContentLoaded', function() {
             if (sort) {
                 sortCards(sort);
             }
-            document.querySelectorAll('.dropdown-content').forEach(function(content) {
-                content.classList.remove('show');
-            });
+            // Hide both dropdowns after an option is clicked
+            filterDropdown.classList.remove('show');
+            sortDropdown.classList.remove('show');
         });
     });
 
+    // Filter function
     function filterCards(filter) {
         const cards = document.querySelectorAll('.animalCardWrapper');
         cards.forEach(function(card) {
-            if (filter === 'all') {
-                card.style.display = 'flex';
-            } else {
-                if (card.classList.contains(filter)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
+            card.style.display = filter === 'all' || card.classList.contains(filter) ? 'flex' : 'none';
         });
     }
 
+    // Sort function
     function sortCards(sort) {
         const wrapper = document.getElementById('wrapper');
         const cards = Array.from(wrapper.getElementsByClassName('animalCardWrapper'));
-        
+
         if (sort === 'category') {
             const categoryOrder = ['predators', 'poisonous', 'reptiles', 'seaCreatures', 'marineGiants', 'largeMammals', 'landMammals', 'birds'];
-            
-            // First, sort by category
-            cards.sort(function(a, b) {
+            cards.sort((a, b) => {
                 const aCategory = categoryOrder.indexOf(a.classList[1]);
                 const bCategory = categoryOrder.indexOf(b.classList[1]);
-    
-                // Compare by category first
-                if (aCategory !== bCategory) {
-                    return aCategory - bCategory;
-                }
-    
-                // If categories are the same, then sort by group_number (from lowest to highest)
-                const aGroupNumber = parseInt(a.querySelector('.animalGroupNumber').textContent.replace(/\D/g, '')); // Extract number from group info
-                const bGroupNumber = parseInt(b.querySelector('.animalGroupNumber').textContent.replace(/\D/g, '')); // Extract number from group info
+                if (aCategory !== bCategory) return aCategory - bCategory;
+
+                const aGroupNumber = parseInt(a.querySelector('.animalGroupNumber').textContent.replace(/\D/g, ''));
+                const bGroupNumber = parseInt(b.querySelector('.animalGroupNumber').textContent.replace(/\D/g, ''));
                 return aGroupNumber - bGroupNumber;
             });
         } else if (sort === 'name') {
-            // Sorting by name (alphabetically)
-            cards.sort(function(a, b) {
+            cards.sort((a, b) => {
                 const aName = a.querySelector('.animalName').textContent.toLowerCase();
                 const bName = b.querySelector('.animalName').textContent.toLowerCase();
-                return aName.localeCompare(bName); // Using localeCompare to compare strings
+                return aName.localeCompare(bName);
             });
         } else {
-            // Sorting by numeric values like weight, lifespan, length, litter_size, top_speed, or deaths
-            cards.sort(function(b, a) {
+            // Sorting by other numeric attributes
+            cards.sort((b, a) => {
                 let aValue, bValue;
-    
-                // Parse values, ensuring they're valid numbers
                 if (sort === 'max_weight') {
                     aValue = parseFloat(a.querySelector('.attributeValueWeight').textContent);
                     bValue = parseFloat(b.querySelector('.attributeValueWeight').textContent);
@@ -167,19 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     aValue = parseInt(a.querySelector('.attributeValueDeath').textContent);
                     bValue = parseInt(b.querySelector('.attributeValueDeath').textContent);
                 }
-    
-                // If the values are not valid numbers, treat them as zero
                 aValue = isNaN(aValue) ? 0 : aValue;
                 bValue = isNaN(bValue) ? 0 : bValue;
-    
-                return aValue - bValue;  // Sort in ascending order (lowest to highest)
+                return aValue - bValue;
             });
         }
-        
+
         cards.forEach(function(card) {
             wrapper.appendChild(card);
         });
     }
- 
-
 });

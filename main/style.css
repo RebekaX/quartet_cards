@@ -1,40 +1,59 @@
-main, body {
+
+html, body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  overflow: auto;
   background-color: #1a1b29;
 }
 
-/* Header Layout */
+body {
+  max-width: 100vw;  /* Prevent body content from exceeding the viewport width */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+#stickyCounter {
+  position: sticky;  /* Make the counter sticky */
+  top: 0;            /* Distance from the top of the viewport */
+  z-index: 10;       /* Ensure the counter is above other elements */
+  background-color: #fff;  /* White background to make the counter stand out */
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: For shadow effect */
+  max-width: 100vw;  /* Prevent body content from exceeding the viewport width */
+}
+
+.collectedText {
+  font-size: 15px;
+  color: #1a1b29;
+  text-align: center; /* Center-align the text */
+
+}
 header {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto; /* Add an extra column for the dropdowns */
   align-items: center;
-  grid-gap: 20px;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   background-color: #111218;
+  max-width: 100vw;  /* Prevent body content from exceeding the viewport width */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 /* Website Icon */
 .websiteIcon {
-  width: 100px;
   height: 50px;
-  background-color: red;
   color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 8px;
 }
 
 /* Title (h1) */
 h1 {
-  font-size: 2rem;
+  font-size: 25px;
   color: white;
   text-align: left;
   margin: 0;
+  cursor: pointer;
+  
 }
 
 nav {
@@ -43,19 +62,24 @@ nav {
 
 .websiteIcon {
 scale: 80%;
+cursor: pointer;
+
 }
 
 .filter-container {
   position: relative;
+  display: grid;
+  grid-template-columns: auto auto; /* Adjust as needed for multiple dropdowns */
+  gap: 3rem;
+  margin-right: 3rem;
 }
 
 /* Filter Text */
 .filter-title {
-  font-size: 1.2rem;
+  font-size: 15px;
   color: white;
   cursor: pointer;
   padding: 10px 20px;
-  margin-right: 10rem;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
@@ -77,37 +101,50 @@ scale: 80%;
   left: 0;
   background-color: #2a2f46;
   color: white;
-  padding:0.3rem;
+  padding: 0.3rem;
   border-radius: 5px;
-  width: 180px;
+  width: 140px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 100;
   opacity: 0;
+  pointer-events: none; /* Disable pointer events when closed */
+  transition: opacity 0.3s ease;
 }
 
-.filter-dropdown:hover .dropdown-content,
-.filter-dropdown:focus-within .dropdown-content {
-  display: block;
+/* Ensure dropdowns are initially hidden */
+.filter-dropdown .dropdown-content,
+#sortDropdown .dropdown-content {
+    display: none;
 }
+
+/* Show the dropdown when hovering or clicked */
+.filter-dropdown .dropdown-content.show,
+#sortDropdown .dropdown-content.show {
+    display: block;
+}
+
 
 .show {
   display: block;
   opacity: 1;
+  pointer-events: auto;
 }
-
 
 .dropdown-content div {
   padding: 0.5rem 0;
+  font-size: 14px;
   border-radius: 3px; 
   margin-left: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease, font-weight 0.3s ease; 
+  
 
 }
 .dropdown-content div::before {
   content: '';
   display: inline-block;
   width: 6px;
+  
 }
 
 .dropdown-content div:hover {
@@ -121,29 +158,23 @@ scale: 80%;
   border-radius: 5px;
   border: none;
   font-size: 1rem;
+  
 }
-.container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
+
     #wrapper {
-      margin: 1rem;
+      margin: 0.5rem;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid based on viewport */
+      gap: 1rem;
       padding-top: 2rem;
+      justify-items: center;
+
     }
 
     .animalCardWrapper {
       width: 300px; 
       height: 450px; 
-      display: flex;
-      padding: 1rem;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      background-color: #1d759e;
+      padding: 1rem;     
       scale: 0.9;
       gap: 0.5rem;  
       position: relative; /* Add relative positioning */
@@ -153,14 +184,6 @@ scale: 80%;
     box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.86); 
     transition: box-shadow 0.7s ease;
   }
-  
-  .animalCardWrapper {
-    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
-}
-
-.animalCardWrapper.clicked {
-    opacity: 0.3;
-}
 
   .predators{
     background-color: #da5c53;
@@ -231,7 +254,6 @@ scale: 80%;
 
     .animalIcon {
       padding: 0.5rem;
-      background-color: rgb(30, 110, 147);
       border-radius: 0.5rem;
       width: 1.5rem;  
       height: 1rem  ;

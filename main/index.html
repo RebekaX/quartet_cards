@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Cards</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 600px)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,25 +19,11 @@
         
         <h1>Card Safari</h1>
         
-        <nav>
+       
             <div class="filter-container">
-                <div id="filterDropdown" class="filter-dropdown">
-                    <span id="filterTitle" class="filter-title">Filter &#9662;</span> 
-                    <div class="dropdown-content">
-                        <div data-filter="all">Alle</div>
-                        <div data-filter="predators">Raubtiere</div>
-                        <div data-filter="poisonous">Giftig und infektiös</div>
-                        <div data-filter="reptiles">Reptilien</div>
-                        <div data-filter="seaCreatures">Meeresbewohner</div>
-                        <div data-filter="marineGiants">Meeresgiganten</div>
-                        <div data-filter="largeMammals">Großsäuger</div>
-                        <div data-filter="landMammals">Landsäugetiere</div>
-                        <div data-filter="birds">Vögel</div>
-                        
-                    </div>
-                </div>
+               
                 <div id="sortDropdown" class="filter-dropdown">
-                    <span id="sortTitle" class="filter-title">Sort By &#9662;</span> 
+                    <span id="sortTitle" class="filter-title">Sortieren nach &#9662;</span> 
                     <div class="dropdown-content">
                         <div data-sort="category">Kategorie</div>
                         <div data-sort="name">Name</div>
@@ -48,21 +35,39 @@
                         <div data-sort="deaths">Todesfälle</div>
                     </div>
             </div>
-        </nav>
+            <div id="filterDropdown" class="filter-dropdown">
+                <span id="filterTitle" class="filter-title">Filter &#9662;</span> 
+                <div class="dropdown-content">
+                    <div data-filter="all">Alle</div>
+                    <div data-filter="predators">Raubtiere</div>
+                    <div data-filter="poisonous">Giftig und infektiös</div>
+                    <div data-filter="reptiles">Reptilien</div>
+                    <div data-filter="seaCreatures">Meeresbewohner</div>
+                    <div data-filter="marineGiants">Meeresgiganten</div>
+                    <div data-filter="largeMammals">Großsäuger</div>
+                    <div data-filter="landMammals">Landsäugetiere</div>
+                    <div data-filter="birds">Vögel</div>
+                    
+                </div>
+            </div>
+       
     </header>
+    <div id="stickyCounter">
+        <div class="collectedText">Karten gesammelt: <span id="counter">32/32</span></div>
+    </div>
+    
     <div class="container" id="wrapper">
         <div class="animalCardWrapper">
             <div class="animalCard">
                 <div class="animalCardPredator">
                 <div class="animalCardHeader">
-                    <div class="animalGroupNumber">E2</div>
-                    <div class="animalName">Weißer Hai</div>
+                    <div class="animalGroupNumber"></div>
+                    <div class="animalName"></div>
                     <div class="animalIcon">
                     </div>
                 </div>
                 <div class="animalImage"></div>
                 <div class="animalDescription">
-                    Weiße Haie können einzelne Tropfen Blut in Millionen Litern Wasser riechen.
                 </div>
                 <div class="animalAttributesWrapper">
                     <div class="animalAttributesColumn">
@@ -72,25 +77,25 @@
                         </div>
                         <div class="attributeBox">
                             <img src="../main/assets/icon/hourglass.png" alt="image" />
-                            <p class="attributeValueYears">70</p>
+                            <p class="attributeValueYears"></p>
                         </div>
                         <div class="attributeBox">
                             <img src="../main/assets/icon/chick.png" alt="image" />
-                            <p class="attributeValueBabies">14</p>
+                            <p class="attributeValueBabies"></p>
                         </div>
                     </div>
                     <div class="animalAttributesColumn">
                         <div class="attributeBox">
                             <img src="../main/assets/icon/size.png" alt="image" />
-                            <p class="attributeValueLenght">600</p>
+                            <p class="attributeValueLenght"></p>
                         </div>
                         <div class="attributeBox">
                             <img src="../main/assets/icon/speed.png" alt="image" />
-                            <p class="attributeValueSpeed">60</p>
+                            <p class="attributeValueSpeed"></p>
                         </div>
                         <div class="attributeBox">
                             <img src="../main/assets/icon/skull.png" alt="image" />
-                            <p class="attributeValueDeath">10</p>
+                            <p class="attributeValueDeath"></p>
                         </div>
                     </div>
                 </div>

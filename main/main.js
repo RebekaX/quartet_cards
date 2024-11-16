@@ -2,7 +2,6 @@ $(document).ready(function() {
     $.each(data, function(index, animal) {
         let cardTemplate = $('.animalCardWrapper').first().clone();
         
-        // Populate card with animal data
         cardTemplate.find('.animalName').text(animal.name_german);
         cardTemplate.find('.animalDescription').text(animal.trivia_german);
         cardTemplate.find('.animalAttributes').text(animal.name_german);
@@ -15,7 +14,6 @@ $(document).ready(function() {
         cardTemplate.find('.attributeValueSpeed').text(animal.top_speed);
         cardTemplate.find('.attributeValueDeath').text(animal.deaths);
         
-        // Assign classes based on animal group
         switch(animal.groupname) {
             case "Predators":
                 cardTemplate.addClass('predators animalCardPredators');
@@ -55,7 +53,6 @@ $(document).ready(function() {
         $('#wrapper').append(cardTemplate);
     });
 
-    // Remove the original template element
     $('.animalCardWrapper').first().remove();
 
 let totalCards = 32;
@@ -93,19 +90,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortDropdown = document.querySelector('#sortDropdown .dropdown-content');
     const filterButton = document.getElementById('filterTitle');
     const sortButton = document.getElementById('sortTitle');
-    const websiteIcon = document.querySelector('.websiteIcon'); // Use querySelector to target the div
-    const h1 = document.querySelector('h1');
+    const websiteIcon = document.querySelector('.websiteIcon');
+    const websiteTitle = document.querySelector('#webTitle');
 
     filterButton.addEventListener('click', function() {
         filterDropdown.classList.toggle('show');
     });
 
-    // Toggle sort dropdown on click
     sortButton.addEventListener('click', function() {
         sortDropdown.classList.toggle('show');
     });
 
-    // Close both dropdowns when an option is selected
     document.querySelectorAll('.dropdown-content div').forEach(function(element) {
         element.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
@@ -116,13 +111,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if (sort) {
                 sortCards(sort);
             }
-            // Hide both dropdowns after an option is clicked
             filterDropdown.classList.remove('show');
             sortDropdown.classList.remove('show');
         });
     });
 
-    // Filter function
+    // Reload 
+    websiteIcon.addEventListener('click', function() {
+        location.reload();
+    });
+
+    websiteTitle.addEventListener('click', function() {
+        location.reload();
+    });
+
+    // Filter 
     function filterCards(filter) {
         const cards = document.querySelectorAll('.animalCardWrapper');
         cards.forEach(function(card) {
@@ -130,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Sort function
+    // Sort
     function sortCards(sort) {
         const wrapper = document.getElementById('wrapper');
         const cards = Array.from(wrapper.getElementsByClassName('animalCardWrapper'));
@@ -153,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return aName.localeCompare(bName);
             });
         } else {
-            // Sorting by other numeric attributes
             cards.sort((b, a) => {
                 let aValue, bValue;
                 if (sort === 'max_weight') {

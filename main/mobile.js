@@ -7,32 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const websiteIcon = document.querySelector('.websiteIcon');
     const websiteTitle = document.querySelector('#webTitle');
 
-    // Show and hide the popup overlay for filter and sort options
     filterPopup.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent the click event from propagating to the overlay
-        filterPopupOverlay.classList.toggle('show'); // Toggle visibility of the popup overlay
-        popupOptions.innerHTML = ''; // Clear previous options
+        event.stopPropagation(); 
+        filterPopupOverlay.classList.toggle('show'); 
+        popupOptions.innerHTML = ''; 
         createPopupOptions('filter');
     });
 
     sortPopup.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent the click event from propagating to the overlay
-        filterPopupOverlay.classList.toggle('show'); // Toggle visibility of the popup overlay
-        popupOptions.innerHTML = ''; // Clear previous options
+        event.stopPropagation(); 
+        filterPopupOverlay.classList.toggle('show'); 
+        popupOptions.innerHTML = ''; 
         createPopupOptions('sort');
     });
 
-    // Close the popup if user clicks anywhere outside of it
     filterPopupOverlay.addEventListener('click', function() {
-        filterPopupOverlay.classList.remove('show'); // Hide the popup overlay
+        filterPopupOverlay.classList.remove('show'); 
     });
 
-    // Prevent clicks inside the popup from closing it
     popupOptions.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent click events inside the popup from closing the overlay
+        event.stopPropagation(); 
     });
 
-    // Function to generate options based on filter or sort
     function createPopupOptions(type) {
         const options = type === 'filter'
             ? {
@@ -57,21 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 deaths: 'Todesfälle'
             };
 
-        // Dynamically create options and insert the German translations
         Object.entries(options).forEach(([key, value]) => {
             const optionDiv = document.createElement('div');
             optionDiv.classList.add('popupOption');
-            optionDiv.textContent = value; // Use German translation
+            optionDiv.textContent = value; 
             optionDiv.setAttribute('data-' + type, key);
             optionDiv.addEventListener('click', function() {
                 handlePopupOptionClick(type, key);
-                filterPopupOverlay.classList.remove('show'); // Close the popup after selection
+                filterPopupOverlay.classList.remove('show'); 
             });
             popupOptions.appendChild(optionDiv);
         });
     }
 
-    // Handle the filter and sort options
     function handlePopupOptionClick(type, option) {
         if (type === 'filter') {
             filterCards(option);
@@ -80,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Filter functionality
     function filterCards(filter) {
         const cards = document.querySelectorAll('.animalCardWrapper');
         cards.forEach(function(card) {
@@ -143,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Reload Page when clicking on website icon or title
     websiteIcon.addEventListener('click', function() {
         location.reload();
     });
@@ -152,11 +144,3 @@ document.addEventListener('DOMContentLoaded', function() {
         location.reload();
     });
 });
-// Handle the popup option click
-function highlightSelectedOption(selectedOption) {
-    const options = document.querySelectorAll('.popupOption');
-    options.forEach(option => {
-        option.classList.remove('selected'); // Remove bold from all options
-    });
-    selectedOption.classList.add('selected'); // Add bold to the clicked option
-}

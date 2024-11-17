@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  max-width: 100vw; 
+  width: 100vw; 
   margin: 0;
   padding: 0; 
 }
@@ -160,29 +160,29 @@ cursor: pointer;
   
 }
 
-    #wrapper {
-      margin: 0.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid */
-      padding-top: 2rem;
-      justify-items: center;
-      gap: 1rem;
+#wrapper {
+  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid */
+  padding-top: 2rem;
+  justify-items: center;
+  gap: 1rem;
 
-    }
-    .animalCardWrapper {
-      width: 300px; 
-      height: 450px; 
-      padding: 1rem;     
-      scale: 0.9;
-      position: relative; 
-      transition: transform 0.4s ease-out; 
-    }
+  }
+
+.animalCardWrapper {
+  width: 300px; 
+  height: 450px; 
+  padding: 1rem;     
+  scale: 0.9;
+  position: relative; 
+  }
     
-    .animalCardWrapper:hover {
-      box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.86); 
-      transition: box-shadow 0.7s ease;
-      transition: transform 0.4s ease; 
-    }
+.animalCardWrapper:hover {
+  box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.86); 
+  transition: box-shadow 0.7s ease;
+  transition: transform 0.4s ease; 
+  }
     
   .predators{
     background-color: #da5c53;
@@ -321,7 +321,7 @@ cursor: pointer;
     }
 
     .animalDescription {
-      font-size: 11px;
+      font-size: 12px;
       background-color: #2a2f46;
       padding: 0.5rem;
       margin-top: 0.5rem;
@@ -378,14 +378,12 @@ cursor: pointer;
         font-size: 13px;
     }
 
-    /* General button styling (if you want it intact for smaller screens) */
 #filterButton, #sortButton {
-  display: block; /* Ensure they are visible by default */
+  display: block; 
 }
 
-/* Hide the buttons on desktop */
 @media (min-width: 600px) {
   #filterButton, #sortButton {
-    display: none; /* Remove them from view on desktop */
+    display: none; 
   }
 }

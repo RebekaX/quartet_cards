@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Create cards for animals
     $.each(data, function(index, animal) {
         let cardTemplate = $('.animalCardWrapper').first().clone();
         
@@ -15,7 +14,6 @@ $(document).ready(function() {
         cardTemplate.find('.attributeValueSpeed').text(animal.top_speed);
         cardTemplate.find('.attributeValueDeath').text(animal.deaths);
 
-        // Add animal category-specific classes
         switch(animal.groupname) {
             case "Predators":
                 cardTemplate.addClass('predators animalCardPredators');
@@ -86,10 +84,8 @@ $(document).ready(function() {
     });
 
     
-    // Update counter on page load
     updateCounter();
 
-    // Filter and Sort Dropdown Events
     const filterDropdown = document.querySelector('#filterDropdown .dropdown-content');
     const sortDropdown = document.querySelector('#sortDropdown .dropdown-content');
     const filterButton = document.getElementById('filterTitle');
@@ -120,7 +116,6 @@ $(document).ready(function() {
         });
     });
 
-    // Reload Page when clicking on website icon or title
     websiteIcon.addEventListener('click', function() {
         location.reload();
     });

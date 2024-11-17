@@ -1,24 +1,24 @@
 @media (max-width: 600px) {
-  body, html, header {
+  body, html {
+    width: 100%;
     max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     background-color: #111218;
     box-sizing: border-box;
+    width: 100%;
   }
 
   .collectedText {
     font-size: 14px;
-  }
-
-  #wrapper {
-    padding-top: 0;
-    margin: 0;
   }
 
   #webTitle {
@@ -29,74 +29,57 @@
     margin-left: 1rem;
   }
 
-  .animalCardWrapper {
-    width: 85vw;           /* Reduced width to make the wrapper smaller */
-    max-width: 320px;      /* Limit maximum width */
-    height: auto;          /* Maintain auto height */
-    box-sizing: border-box;
-    margin-bottom: 1.5rem; /* Space between cards */
-  }
-
   .animalCard {
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    overflow: hidden;
     transform-origin: center;
   }
 
   .animalAttributesWrapper {
     position: relative;
     margin-top: 1.8rem;
+    width: 100%;   
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: flex-start;  
     left: 0;
-    right: 0;
-    bottom: 0.2rem;
-    width: 100%;
+    bottom: 0.7rem;
   }
 
   .animalName {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
-  .animalDescription {
-    font-size: 11px;
-  }
-
-  /* Hide dropdowns and show buttons for mobile */
   #filterDropdown, #sortDropdown {
-    display: none; /* Hide dropdowns */
+    display: none;
   }
 
-  /* Clean Style for Filter and Sort Buttons */
   #filterButton, #sortButton {
     font-size: 15px;
     color: white;
     background-color: transparent;
-    cursor: pointer;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 5px;
-    grid-template-columns: unset;
-    margin-right: 0;
+    margin: 0 auto;
     border: none;
     box-shadow: none;
     transition: background-color 0.3s ease;
   }
 
   #filterButton:active, #sortButton:active {
-    background-color: #123c58; /* Slightly darker feedback on press */
+    background-color: #123c58;
   }
 
   .filter-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-right: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
   }
 
-  /* Popup overlay */
+  /* overlay */
   #popupOverlay {
     display: none;
     position: fixed;
@@ -104,7 +87,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: flex-end;
     z-index: 1000;
@@ -113,7 +96,7 @@
 
   #popupOverlay.show {
     display: flex;
-    bottom: 0; /* Slide the popup up to the screen */
+    bottom: 0;
   }
 
   #popupOptions {
@@ -142,5 +125,54 @@
 
   .popupOption:last-child {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .animalAttributesWrapper {
+    align-items: flex-start;
+    gap: 0.8rem;
+    bottom: 0.7rem;
+
+  }
+
+  .animalCardWrapper {
+   scale: 0.8;
+  }
+  
+  .animalAttributesColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    gap: 0.5rem;
+  }
+
+  .attributeBox {
+    width: 33vw;
+    height: 1.5rem; 
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: #2a2f46;
+    padding: 0.2rem;
+    gap: 0.8rem;
+  }
+
+  .attributeBox > img {
+    width: 1.2rem; 
+    height: 1.2rem;
+    margin-left: 0.3rem; 
+  }
+
+  .attributeValueWeight,
+  .attributeValueYears,
+  .attributeValueBabies,
+  .attributeValueLenght,
+  .attributeValueSpeed,
+  .attributeValueDeath {
+    font-size: 11px; 
   }
 }

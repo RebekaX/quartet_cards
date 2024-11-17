@@ -15,7 +15,7 @@ body {
   position: sticky;  /* sticky counter */
   top: 0;            
   z-index: 10;       
-  background-color: #fff;  
+  background-color: #2a2f46;  
   padding: 10px 20px;
   font-weight: bold;
   border-radius: 0px 0px 3px 3px;
@@ -25,7 +25,7 @@ body {
 
 .collectedText {
   font-size: 15px;
-  color: #1a1b29;
+  color: #ffffff;
   text-align: center;
 
 }
@@ -39,10 +39,12 @@ header {
   box-sizing: border-box; 
 }
 
+
 .websiteIcon {
   height: 50px;
   color: white;
   display: flex;
+  margin-left: 1.5rem;
 }
 
 
@@ -69,7 +71,7 @@ cursor: pointer;
   position: relative;
   display: grid;
   grid-template-columns: auto auto; 
-  gap: 3rem;
+  gap: 4rem;
   margin-right: 3rem;
 }
 
@@ -82,7 +84,7 @@ cursor: pointer;
 }
 
 .filter-title:hover {
-  background-color: #165f7f;
+  background-color: #2a2f46;
 }
 
 .filter-dropdown {
@@ -100,7 +102,7 @@ cursor: pointer;
   color: white;
   padding: 0.3rem;
   border-radius: 5px;
-  width: 120px;
+  width: 130px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 100;
   opacity: 0;
@@ -179,7 +181,6 @@ cursor: pointer;
     .animalCardWrapper:hover {
       box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.86); 
       transition: box-shadow 0.7s ease;
-      transform: scale(1.05); 
       transition: transform 0.4s ease; 
     }
     
@@ -376,3 +377,15 @@ cursor: pointer;
     .attributeValueDeath {
         font-size: 13px;
     }
+
+    /* General button styling (if you want it intact for smaller screens) */
+#filterButton, #sortButton {
+  display: block; /* Ensure they are visible by default */
+}
+
+/* Hide the buttons on desktop */
+@media (min-width: 600px) {
+  #filterButton, #sortButton {
+    display: none; /* Remove them from view on desktop */
+  }
+}

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Create cards for animals
     $.each(data, function(index, animal) {
         let cardTemplate = $('.animalCardWrapper').first().clone();
         
@@ -13,7 +14,8 @@ $(document).ready(function() {
         cardTemplate.find('.attributeValueLenght').text(animal.max_length);
         cardTemplate.find('.attributeValueSpeed').text(animal.top_speed);
         cardTemplate.find('.attributeValueDeath').text(animal.deaths);
-        
+
+        // Add animal category-specific classes
         switch(animal.groupname) {
             case "Predators":
                 cardTemplate.addClass('predators animalCardPredators');
@@ -53,18 +55,17 @@ $(document).ready(function() {
         $('#wrapper').append(cardTemplate);
     });
 
+    // Remove the first template card
     $('.animalCardWrapper').first().remove();
 
-let totalCards = 32;
-let collectedCount = totalCards;
+    let totalCards = 32;
+    let collectedCount = totalCards;
 
-function updateCounter() {
-    $('#counter').text(collectedCount + '/' + totalCards);
-}
+    function updateCounter() {
+        $('#counter').text(collectedCount + '/' + totalCards);
+    }
 
-$(document).ready(function() {
-    updateCounter();
-
+    // Update counter on card click and toggle opacity
     $('.animalCardWrapper').on('click', function() {
         var $this = $(this);
         
@@ -80,12 +81,15 @@ $(document).ready(function() {
         }
 
         updateCounter();
+        
+   
     });
-});
 
-});
+    
+    // Update counter on page load
+    updateCounter();
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Filter and Sort Dropdown Events
     const filterDropdown = document.querySelector('#filterDropdown .dropdown-content');
     const sortDropdown = document.querySelector('#sortDropdown .dropdown-content');
     const filterButton = document.getElementById('filterTitle');
@@ -116,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Reload 
+    // Reload Page when clicking on website icon or title
     websiteIcon.addEventListener('click', function() {
         location.reload();
     });
@@ -125,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         location.reload();
     });
 
-    // Filter 
+    // Filter Functionality
     function filterCards(filter) {
         const cards = document.querySelectorAll('.animalCardWrapper');
         cards.forEach(function(card) {
@@ -133,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Sort
+    // Sort Functionality
     function sortCards(sort) {
         const wrapper = document.getElementById('wrapper');
         const cards = Array.from(wrapper.getElementsByClassName('animalCardWrapper'));
@@ -188,3 +192,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+

@@ -1,55 +1,40 @@
-
 @media (max-width: 600px) {
   body, html, header {
-    max-width: 100vw; 
-
+    max-width: 100vw;
   }
 
-  .filter-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-right: 1.8rem;
-    gap: 1.8rem;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    background-color: #111218;
+    box-sizing: border-box;
   }
 
-  #stickyCounter {
-    position: sticky; 
-    top: 0;            
-    z-index: 10;      
-    background-color: #fff;  
-    padding: 5px 15px;
-    font-weight: bold;
-    border-radius: 3px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); 
-    max-width: 100vw; 
-  }
-  
   .collectedText {
-    font-size: 12px;
-    color: #1a1b29;
-    text-align: center;
-  
+    font-size: 14px;
   }
-  #wrapper {      
-    padding-top: 0;  
-    margin: 0;             
+
+  #wrapper {
+    padding-top: 0;
+    margin: 0;
   }
-  
 
   #webTitle {
-    font-size: 15px;
-    width: 5rem;
-  
+    font-size: 16px;
+  }
+
+  .websiteIcon {
+    margin-left: 1rem;
   }
 
   .animalCardWrapper {
-    width: 90vw; 
-    max-width: 350px; 
-    height: auto; 
+    width: 85vw;           /* Reduced width to make the wrapper smaller */
+    max-width: 320px;      /* Limit maximum width */
+    height: auto;          /* Maintain auto height */
     box-sizing: border-box;
-    scale: 80%;
-
+    margin-bottom: 1.5rem; /* Space between cards */
   }
 
   .animalCard {
@@ -61,19 +46,17 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    transform-origin: center; 
+    transform-origin: center;
+  }
 
-.animalAttributesWrapper {
-  position: relative; 
-  margin-top: 1.8rem; 
-  left: 0;
-  right: 0;
-  bottom: 0.2rem;
-  width: 100%; 
-  scale: 105%;
-
-}
-
+  .animalAttributesWrapper {
+    position: relative;
+    margin-top: 1.8rem;
+    left: 0;
+    right: 0;
+    bottom: 0.2rem;
+    width: 100%;
+  }
 
   .animalName {
     font-size: 1rem;
@@ -82,40 +65,82 @@
   .animalDescription {
     font-size: 11px;
   }
-}
 
+  /* Hide dropdowns and show buttons for mobile */
+  #filterDropdown, #sortDropdown {
+    display: none; /* Hide dropdowns */
+  }
 
-.filter-title {
-  font-size: 12px;
-  padding: 0.2rem;
-  white-space: nowrap; 
-}
+  /* Clean Style for Filter and Sort Buttons */
+  #filterButton, #sortButton {
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    grid-template-columns: unset;
+    margin-right: 0;
+    border: none;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+  }
 
+  #filterButton:active, #sortButton:active {
+    background-color: #123c58; /* Slightly darker feedback on press */
+  }
 
-.dropdown-content {
-  width: 90px; 
-  font-size: 0.9rem; 
-  padding: 0; 
-  font-size: 10px;
-  display: none;
-}
+  .filter-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: 3rem;
+  }
 
-.dropdown-content div {
-  font-size: 9px;
-  margin-left: 0;
-}
+  /* Popup overlay */
+  #popupOverlay {
+    display: none;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1000;
+    transition: bottom 0.3s ease-in-out;
+  }
 
-.dropdown-content.show {
-  display: block;
-}
+  #popupOverlay.show {
+    display: flex;
+    bottom: 0; /* Slide the popup up to the screen */
+  }
 
-.websiteIcon {
-  scale: 70%;
-}
+  #popupOptions {
+    background-color: #262739;
+    padding: 0.2rem;
+    border-radius: 10px 10px 0 0;
+    width: 90%;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease-in-out;
+  }
 
-.filter-title:hover {
-background-color: #111218;
-}
+  .popupOption {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
 
+  .popupOption:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
 
+  .popupOption:last-child {
+    margin-bottom: 0;
+  }
 }

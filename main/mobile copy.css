@@ -1,0 +1,205 @@
+@media (max-width: 600px) {
+  /* Basic adjustments for the body and header */
+  body, html, header {
+    width: 100vw;  /* Make sure the width does not exceed the viewport */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Adjust the filter container to display as a grid */
+  .filter-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: 1.8rem;
+    gap: 1.8rem;
+  }
+
+  /* Sticky counter at the top of the screen */
+  #stickyCounter {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    text-align: center; /* Ensure the text is centered */
+  }
+  
+  .collectedText {
+    font-size: 12px;
+    color: #1a1b29;
+    text-align: center;
+  }
+
+  /* Adjusting wrapper layout */
+  #wrapper {
+    padding-top: 0;
+    margin: 0;
+  }
+
+  /* Adjust title for mobile screen */
+  #webTitle {
+    font-size: 15px;
+    width: 5rem;
+    text-align: center;  /* Center title on small screens */
+  }
+
+  /* Animal card wrapper adjustments */
+  .animalCardWrapper {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+    box-sizing: border-box;
+    transform: scale(0.8);  /* Scale down the card slightly */
+    margin: 0 auto; /* Center the card wrapper */
+  }
+
+  .animalCard {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+  }
+
+  .animalAttributesWrapper {
+    position: relative;
+    margin-top: 1.8rem;
+    width: 100%;
+    scale: 1.05; /* Slightly enlarge the attributes section */
+  }
+
+  /* Adjusting animal name and description */
+  .animalName {
+    font-size: 1rem;
+  }
+
+  .animalDescription {
+    font-size: 11px;
+  }
+
+  /* Styles for filter and sort titles */
+  .filter-title {
+    font-size: 12px;
+    padding: 0.2rem;
+    white-space: nowrap;
+    cursor: pointer; /* Indicate clickable text */
+  }
+
+  /* Hide dropdowns initially on mobile */
+  .dropdown-content {
+    width: 90px;
+    font-size: 10px;
+    padding: 0;
+    display: none;
+  }
+
+  /* Display dropdown content when visible */
+  .dropdown-content.show {
+    display: block;
+  }
+
+  /* Smaller font size for dropdown options */
+  .dropdown-content div {
+    font-size: 9px;
+    margin-left: 0;
+  }
+
+  /* Adjust icon scaling */
+  .websiteIcon {
+    transform: scale(0.7);
+  }
+
+  /* Hover effect for filter title */
+  .filter-title:hover {
+    background-color: #111218;
+  }
+
+  /* Hide dropdowns and show buttons for mobile */
+  #filterDropdown, #sortDropdown {
+    display: none; /* Hide dropdowns */
+  }
+
+  /* Mobile buttons to trigger popups */
+  #filterButton, #sortButton {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Popup overlay */
+  #popupOverlay {
+    display: none;  /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the popup is above other content */
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #popupOverlay.show {
+    display: flex;
+    opacity: 1; /* When shown, set opacity to 1 */
+  }
+
+  #popupOptions {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 350px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .popupOption {
+    margin: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .popupOption:hover {
+    background-color: #ddd;
+  }
+
+  #closePopup {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Close button hover effect */
+  #closePopup:hover {
+    background-color: #e60000;
+  }
+}

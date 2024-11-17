@@ -13,53 +13,60 @@
         rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="websiteIcon"><img src="../main/assets/icon/logo.png" alt="icon" />
-        </div>
-        
-        <div id="webTitle">Card Safari</div>
-        
-       
-            <div class="filter-container">
-               
-                <div id="sortDropdown" class="filter-dropdown">
-                    <span id="sortTitle" class="filter-title">Sortiere &#9662;</span> 
-                    <div class="dropdown-content">
-                        <div data-sort="category">Kategorie</div>
-                        <div data-sort="name">Name</div>
-                        <div data-sort="max_weight">Gewicht</div>
-                        <div data-sort="lifespan">Lebensdauer</div>
-                        <div data-sort="litter_size">Wurfgröße</div>
-                        <div data-sort="size">Größe</div>
-                        <div data-sort="top_speed">Schnelligkeit</div>
-                        <div data-sort="deaths">Todesfälle</div>
-                    </div>
-            </div>
-            <div id="filterDropdown" class="filter-dropdown">
-                <span id="filterTitle" class="filter-title">Filter &#9662;</span> 
-                <div class="dropdown-content">
-                    <div data-filter="all">Alle</div>
-                    <div data-filter="predators">Raubtiere</div>
-                    <div data-filter="poisonous">Giftig und infektiös</div>
-                    <div data-filter="reptiles">Reptilien</div>
-                    <div data-filter="seaCreatures">Meeresbewohner</div>
-                    <div data-filter="marineGiants">Meeresgiganten</div>
-                    <div data-filter="largeMammals">Großsäuger</div>
-                    <div data-filter="landMammals">Landsäugetiere</div>
-                    <div data-filter="birds">Vögel</div>
-                    
-                </div>
-            </div>
-       
-    </header>
-    <div id="stickyCounter">
-        <div class="collectedText">Karten gesammelt: <span id="counter">32/32</span></div>
+   <header>
+    <div class="websiteIcon">
+        <img src="../main/assets/icon/logo.png" alt="icon" />
     </div>
     
-    <div class="container" id="wrapper">
-        <div class="animalCardWrapper">
-            <div class="animalCard">
-                <div class="animalCardPredator">
+    <div id="webTitle">Card Safari</div>
+
+    <div class="filter-container">
+        <!-- Filter comes first -->
+        <div id="filterDropdown" class="filter-dropdown">
+            <span id="filterTitle" class="filter-title">Filter &#9662;</span> 
+            <div class="dropdown-content">
+                <div data-filter="all">Alle</div>
+                <div data-filter="predators">Raubtiere</div>
+                <div data-filter="poisonous">Giftig und infektiös</div>
+                <div data-filter="reptiles">Reptilien</div>
+                <div data-filter="seaCreatures">Meeresbewohner</div>
+                <div data-filter="marineGiants">Meeresgiganten</div>
+                <div data-filter="largeMammals">Großsäuger</div>
+                <div data-filter="landMammals">Landsäugetiere</div>
+                <div data-filter="birds">Vögel</div>
+            </div>
+        </div>
+
+        <!-- Sort comes next -->
+        <div id="sortDropdown" class="filter-dropdown">
+            <span id="sortTitle" class="filter-title">Sortiere &#9662;</span> 
+            <div class="dropdown-content">
+                <div data-sort="category">Kategorie</div>
+                <div data-sort="name">Name</div>
+                <div data-sort="max_weight">Gewicht</div>
+                <div data-sort="lifespan">Lebensdauer</div>
+                <div data-sort="litter_size">Wurfgröße</div>
+                <div data-sort="size">Größe</div>
+                <div data-sort="top_speed">Schnelligkeit</div>
+                <div data-sort="deaths">Todesfälle</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile buttons for Filter and Sort -->
+    <button id="filterButton" class="mobile-button">Filter</button>
+    <button id="sortButton" class="mobile-button">Sortiere</button>
+
+</header>
+
+<div id="stickyCounter">
+    <div class="collectedText">Karten gesammelt: <span id="counter">32/32</span></div>
+</div>
+
+<div class="container" id="wrapper">
+    <div class="animalCardWrapper">
+        <div class="animalCard">
+            <div class="animalCardPredator">
                 <div class="animalCardHeader">
                     <div class="animalGroupNumber"></div>
                     <div class="animalName"></div>
@@ -67,8 +74,7 @@
                     </div>
                 </div>
                 <div class="animalImage"></div>
-                <div class="animalDescription">
-                </div>
+                <div class="animalDescription"></div>
                 <div class="animalAttributesWrapper">
                     <div class="animalAttributesColumn">
                         <div class="attributeBox">
@@ -102,8 +108,45 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+</div>
+
+<!-- Mobile Pop-up for Filter/Sort -->
+<div id="popupOverlay">
+    <div id="popupOptions">
+        <div id="popupTitle">Wähle eine Option</div>
+        
+        <!-- Filter options in the popup -->
+        <div class="popupOption" id="filterPopup">
+            <div class="popupItem" data-filter="all">Alle</div>
+            <div class="popupItem" data-filter="predators">Raubtiere</div>
+            <div class="popupItem" data-filter="poisonous">Giftig und infektiös</div>
+            <div class="popupItem" data-filter="reptiles">Reptilien</div>
+            <div class="popupItem" data-filter="seaCreatures">Meeresbewohner</div>
+            <div class="popupItem" data-filter="marineGiants">Meeresgiganten</div>
+            <div class="popupItem" data-filter="largeMammals">Großsäuger</div>
+            <div class="popupItem" data-filter="landMammals">Landsäugetiere</div>
+            <div class="popupItem" data-filter="birds">Vögel</div>
+        </div>
+
+        <!-- Sort options in the popup -->
+        <div class="popupOption" id="sortPopup">
+            <div class="popupItem" data-sort="category">Kategorie</div>
+            <div class="popupItem" data-sort="name">Name</div>
+            <div class="popupItem" data-sort="max_weight">Gewicht</div>
+            <div class="popupItem" data-sort="lifespan">Lebensdauer</div>
+            <div class="popupItem" data-sort="litter_size">Wurfgröße</div>
+            <div class="popupItem" data-sort="size">Größe</div>
+            <div class="popupItem" data-sort="top_speed">Schnelligkeit</div>
+            <div class="popupItem" data-sort="deaths">Todesfälle</div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="mobile.js"></script>
+
 </body>
 </html>

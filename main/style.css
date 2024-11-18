@@ -1,18 +1,23 @@
-
 html, body {
   margin: 0;
+  padding: 0;
   font-family: "Inter", sans-serif;
   background-color: #1a1b29;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%; 
 }
+
 
 body {
   width: 100vw; 
   margin: 0;
   padding: 0; 
+
 }
 
 #stickyCounter {
-  position: sticky;  /* sticky counter */
+  position: sticky; 
   top: 0;            
   z-index: 10;       
   background-color: #2a2f46;  
@@ -20,7 +25,7 @@ body {
   font-weight: bold;
   border-radius: 0px 0px 3px 3px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-  max-width: 100vw;  
+  width: 100vw;  
 }
 
 .collectedText {
@@ -167,7 +172,6 @@ cursor: pointer;
   padding-top: 2rem;
   justify-items: center;
   gap: 1rem;
-
   }
 
 .animalCardWrapper {
@@ -383,7 +387,8 @@ cursor: pointer;
 }
 
 @media (min-width: 600px) {
-  #filterButton, #sortButton {
+  #filterButton, #sortButton, .popupItem {
     display: none; 
   }
+  
 }
